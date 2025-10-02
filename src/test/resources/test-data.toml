@@ -1,0 +1,139 @@
+# =========================
+# Example TOML Configuration
+# Demonstrates all TOML features
+# =========================
+
+# String types
+basic_string = "Hello, World!"
+literal_string = 'This is a literal string with \n escaped characters'
+multiline_basic = """
+This is a multi-line
+basic string with "quotes"
+and line breaks.
+"""
+multiline_literal = '''
+This is a multi-line
+literal string with \n
+no escape processing.
+'''
+multiline_basic_inline = """This is a multi-line\nbasic string with "quotes"\nand line breaks."""
+multiline_literal_inline = '''This is a multi-line literal string with \nno escape processing.'''
+
+# Integer types (Long in Java)
+decimal_int = 42
+hex_int = 0x2A
+octal_int = 0o52
+binary_int = 0b101010
+negative_int = -123
+large_int = 9223372036854775807
+
+# Float types (Double in Java)
+basic_float = 3.14159
+exponent_float = 1.5e-10
+negative_float = -0.001
+infinity = inf
+neg_infinity = -inf
+not_a_number = nan
+
+# Boolean types
+bool_true = true
+bool_false = false
+
+# Date and time types
+local_date = 1979-05-27
+local_time = 07:32:00.999999
+local_datetime = 1979-05-27T07:32:00.999999
+offset_datetime = 1979-05-27T00:32:00.999999-07:00
+
+# Arrays of primitives
+string_array = ["red", "yellow", "green"]
+integer_array = [1, 2, 3, 4, 5]
+float_array = [1.1, 2.2, 3.3]
+boolean_array = [true, false, true]
+
+# Arrays of dates and times
+date_array = [1979-05-27, 1980-06-15, 1981-07-20]
+time_array = [07:32:00, 12:45:30, 18:20:15]
+datetime_array = [1979-05-27T07:32:00, 1980-06-15T12:45:30]
+offset_datetime_array = [
+    1979-05-27T00:32:00-07:00,
+    1980-06-15T12:45:30+02:00,
+    1981-07-20T18:20:15Z
+]
+
+# Mixed array (should be handled as Object array)
+mixed_array = [1, "two", 3.0, true]
+
+# Arrays with different number formats
+number_formats = [42, 0xFF, 0o755, 0b1010]
+float_formats = [1.0, 1e10, 1.5e-5, inf, -inf]
+
+# Tables (sections)
+[database]
+server = "192.168.1.1"
+ports = [8001, 8001, 8002]
+connection_max = 5000
+enabled = true
+
+[database.credentials]
+username = "admin"
+password = "secret123"
+
+[servers]
+alpha = "10.0.0.1"
+beta = "10.0.0.2"
+
+[servers.development]
+ip = "127.0.0.1"
+port = 3000
+debug = true
+
+[servers.production]
+ip = "192.168.1.100"
+port = 80
+debug = false
+
+# Array of tables
+[[products]]
+name = "Hammer"
+sku = 738594937
+price = 15.99
+in_stock = true
+
+[[products]]
+name = "Screwdriver"
+sku = 284758393
+price = 8.50
+in_stock = false
+
+[[products]]
+name = "Wrench"
+sku = 947382910
+price = 12.75
+in_stock = true
+
+# Nested structures
+[application]
+name = "MyApp"
+version = "1.2.3"
+release_date = 2024-01-15
+
+[application.config]
+timeout = 30
+retry_attempts = 3
+log_level = "INFO"
+
+[application.config.database]
+host = "localhost"
+port = 5432
+ssl = true
+
+# Edge cases and special values
+[edge_cases]
+empty_string = ""
+zero_int = 0
+zero_float = 0.0
+negative_zero = -0.0
+very_large_number = 1.7976931348623157e+308
+very_small_number = 2.2250738585072014e-308
+unicode_string = "Hello 🌍 World! Привет мир! こんにちは世界！"
