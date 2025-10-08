@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.groundbreakingmc"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -131,22 +131,25 @@ java {
 }
 
 tasks {
-    test {
-        useJUnitPlatform()
-    }
     withType<JavaCompile> {
         options.release = 17
     }
+
     withType<Jar> {
         manifest {
             attributes["Implementation-Title"] = project.name
             attributes["Implementation-Version"] = project.version
         }
     }
+
     withType<Javadoc> {
         options {
             encoding = "UTF-8"
             (this as StandardJavadocDocletOptions).addStringOption("Xdoclint:none", "-quiet")
         }
+    }
+
+    test {
+        useJUnitPlatform()
     }
 }
