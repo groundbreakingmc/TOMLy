@@ -96,14 +96,14 @@ publishing {
             artifact(tasks["javadocJar"])
 
             pom {
-                name = "Fission"
-                description = "A high-performance, zero-dependency library designed for blazing-fast file reading and character stream processing. Fission outperforms standard Java I/O by 20-100x in parsing operations while providing a clean, exception-free API."
-                url = "https://github.com/groundbreakingmc/Fission"
+                name = "TOMLy"
+                description = "A high-performance, fully compliant TOML v1.0.0 parser for Java with comment preservation and flexible configuration options."
+                url = "https://github.com/groundbreakingmc/TOMLy"
 
                 licenses {
                     license {
                         name = "The Apache License, Version 2.0"
-                        url = "https://github.com/groundbreakingmc/Fission?tab=Apache-2.0-1-ov-file"
+                        url = "https://github.com/groundbreakingmc/TOMLy?tab=Apache-2.0-1-ov-file"
                     }
                 }
 
@@ -115,9 +115,9 @@ publishing {
                 }
 
                 scm {
-                    connection = "scm:git:git://github.com/groundbreakingmc/Fission.git"
-                    developerConnection = "scm:git:ssh://git@github.com:groundbreakingmc/Fission.git"
-                    url = "https://github.com/groundbreakingmc/Fission"
+                    connection = "scm:git:git://github.com/groundbreakingmc/TOMLy.git"
+                    developerConnection = "scm:git:ssh://git@github.com:groundbreakingmc/TOMLy.git"
+                    url = "https://github.com/groundbreakingmc/TOMLy"
                 }
             }
         }
